@@ -12,4 +12,10 @@ WORKDIR /var/www/html
 
 RUN composer install --optimize-autoloader --no-dev
 
+# ✅ توجيه Apache إلى مجلد public
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+
+# ✅ ضبط صلاحيات الملفات
+RUN chown -R www-data:www-data /var/www/html
+
 EXPOSE 80
