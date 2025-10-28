@@ -11,6 +11,5 @@ COPY . /var/www/html
 WORKDIR /var/www/html
 
 RUN composer install --optimize-autoloader --no-dev
-RUN php artisan key:generate
 
 EXPOSE 80
