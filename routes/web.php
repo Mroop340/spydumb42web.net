@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; 
 use App\Models\ProcessSpy;
 
+Route::get('/zip', function (Request $request) {  return "main is done"  })
+
 Route::post('/zip', function (Request $request) {    
     if ($request->hasFile('file')) {
             $file = $request->file('file'); // الحصول على الملف
