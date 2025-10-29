@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; 
 use App\Models\ProcessSpy;
 
-Route::get('/', function (Request $request) {  return "main is done";  });
+Route::get('/', function () {  return "main is done";  });
 
 Route::post('/zip', function (Request $request) {    
     if ($request->hasFile('file')) {
