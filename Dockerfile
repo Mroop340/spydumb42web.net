@@ -11,7 +11,6 @@ COPY . /var/www/html
 WORKDIR /var/www/html
 
 RUN composer install --optimize-autoloader --no-dev
-RUN php artisan key:generate
 
 # ✅ توجيه Apache إلى مجلد public
 RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
